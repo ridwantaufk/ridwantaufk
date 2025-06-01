@@ -10,6 +10,8 @@ I'm a full-stack developer specializing in Next.js with TypeScript on the fronte
 - Python: Penetration testing, face & hand gesture recognition  
 - Desktop Apps: Electron, WebRTC  
 
+![Cool Animation](https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif)
+
 ## Featured Projects
 - **Financial Management System** – Scalable app for managing finances  
 - **Hospital Information System (SIMRS)** – Efficient hospital operations management  
@@ -20,6 +22,6 @@ I'm a full-stack developer specializing in Next.js with TypeScript on the fronte
 - **Face & Hand Gesture Recognition** – Desktop apps controlling cursor via gestures
 
 ## Connect with Me
-- [LinkedIn](https://www.linkedin.com/in/ridwan-taufik-b3624325a/)  
-- [Instagram](https://www.instagram.com/ridwantaufk/)  
-- [Personal Website](https://ridwantaufk.github.io/ridwan-portfolio-fullstack-developer/)
+- [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ridwan-taufik-b3624325a/)
+- [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/ridwantaufk/)
+- [![Website](https://img.shields.io/badge/Website-000000?style=for-the-badge&logo=github&logoColor=white)](https://ridwantaufk.github.io/ridwan-portfolio-fullstack-developer/)
