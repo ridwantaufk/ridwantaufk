@@ -5,7 +5,7 @@
 </h1>
 
 
-<p align="center">A passionate full-stack developer who blends <strong>web & desktop technologies</strong> with a touch of <strong>Python wizardry</strong></p>
+<p align="center">A passionate full-stack developer who blends <strong>web & desktop technologies</strong> with a touch of <strong>stacks that I have</strong></p>
 
 ---
 
