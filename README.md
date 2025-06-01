@@ -36,70 +36,32 @@
   </defs>
 
   <g filter="url(#glow)">
-    <use xlink:href="#dot" id="dot0" />
-    <use xlink:href="#dot" id="dot1" />
-    <use xlink:href="#dot" id="dot2" />
-    <use xlink:href="#dot" id="dot3" />
-    <use xlink:href="#dot" id="dot4" />
-    <use xlink:href="#dot" id="dot5" />
-    <use xlink:href="#dot" id="dot6" />
-    <use xlink:href="#dot" id="dot7" />
-    <use xlink:href="#dot" id="dot8" />
-    <use xlink:href="#dot" id="dot9" />
+    <use xlink:href="#dot" x="20" y="40">
+      <animateMotion dur="8s" repeatCount="indefinite" path="M0,0 q40,20 60,0 q-20,-40 -40,-20 z" />
+    </use>
+    <use xlink:href="#dot" x="100" y="50">
+      <animateMotion dur="6s" repeatCount="indefinite" path="M0,0 q-30,30 -50,10 q10,-50 60,-20 z" />
+    </use>
+    <use xlink:href="#dot" x="300" y="80">
+      <animateMotion dur="7s" repeatCount="indefinite" path="M0,0 q-50,10 -30,50 q50,-10 10,-60 z" />
+    </use>
+    <use xlink:href="#dot" x="350" y="200">
+      <animateMotion dur="5s" repeatCount="indefinite" path="M0,0 q-40,20 -60,-20 q30,-40 70,-10 z" />
+    </use>
+    <use xlink:href="#dot" x="150" y="300">
+      <animateMotion dur="9s" repeatCount="indefinite" path="M0,0 q20,-30 40,-10 q-40,40 -20,20 z" />
+    </use>
+    <use xlink:href="#dot" x="200" y="350">
+      <animateMotion dur="10s" repeatCount="indefinite" path="M0,0 q-30,-20 -40,10 q50,20 40,-30 z" />
+    </use>
   </g>
 
-  <line id="line0" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.6" />
-  <line id="line1" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.6" />
-  <line id="line2" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.5" />
-  <line id="line3" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.5" />
-  <line id="line4" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.4" />
-  <line id="line5" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.4" />
-
-  <animateMotion xlink:href="#dot0" dur="8s" repeatCount="indefinite" path="M20,40 q40,20 60,0 q-20,-40 -40,-20 z" />
-  <animateMotion xlink:href="#dot1" dur="6s" repeatCount="indefinite" path="M100,50 q-30,30 -50,10 q10,-50 60,-20 z" />
-  <animateMotion xlink:href="#dot2" dur="7s" repeatCount="indefinite" path="M300,80 q-50,10 -30,50 q50,-10 10,-60 z" />
-  <animateMotion xlink:href="#dot3" dur="5s" repeatCount="indefinite" path="M350,200 q-40,20 -60,-20 q30,-40 70,-10 z" />
-  <animateMotion xlink:href="#dot4" dur="9s" repeatCount="indefinite" path="M150,300 q20,-30 40,-10 q-40,40 -20,20 z" />
-  <animateMotion xlink:href="#dot5" dur="10s" repeatCount="indefinite" path="M200,350 q-30,-20 -40,10 q50,20 40,-30 z" />
-  <animateMotion xlink:href="#dot6" dur="11s" repeatCount="indefinite" path="M80,150 q10,30 40,20 q-30,-40 -50,-20 z" />
-  <animateMotion xlink:href="#dot7" dur="12s" repeatCount="indefinite" path="M320,250 q-20,-40 10,-30 q10,40 -20,50 z" />
-  <animateMotion xlink:href="#dot8" dur="9s" repeatCount="indefinite" path="M220,120 q30,-20 20,40 q-40,-20 -10,-30 z" />
-  <animateMotion xlink:href="#dot9" dur="8s" repeatCount="indefinite" path="M180,220 q-30,30 -10,40 q20,-50 -10,-40 z" />
-
-  <script type="application/ecmascript"><![CDATA[
-    const svg = document.currentScript.ownerDocument;
-    const dots = [];
-    for (let i = 0; i < 10; i++) {
-      dots.push(svg.getElementById("dot" + i));
-    }
-    const lines = [];
-    for (let i = 0; i < 6; i++) {
-      lines.push(svg.getElementById("line" + i));
-    }
-    // Pairs to connect (random-ish)
-    const pairs = [
-      [0, 1],
-      [1, 2],
-      [2, 3],
-      [3, 4],
-      [4, 5],
-      [5, 6]
-    ];
-
-    function update() {
-      for (let i = 0; i < pairs.length; i++) {
-        const [a, b] = pairs[i];
-        const p1 = dots[a].transform.baseVal.getItem(0).matrix;
-        const p2 = dots[b].transform.baseVal.getItem(0).matrix;
-        lines[i].setAttribute("x1", p1.e);
-        lines[i].setAttribute("y1", p1.f);
-        lines[i].setAttribute("x2", p2.e);
-        lines[i].setAttribute("y2", p2.f);
-      }
-      requestAnimationFrame(update);
-    }
-    update();
-  ]]></script>
+  <!-- Garis statis acak -->
+  <line x1="20" y1="40" x2="100" y2="50" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.6" />
+  <line x1="100" y1="50" x2="300" y2="80" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.5" />
+  <line x1="300" y1="80" x2="350" y2="200" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.4" />
+  <line x1="350" y1="200" x2="150" y2="300" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.3" />
+  <line x1="150" y1="300" x2="200" y2="350" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.2" />
 </svg>
 
 
