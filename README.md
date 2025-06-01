@@ -10,9 +10,10 @@
 ---
 
 <h2>
-    <img src="./assets/rocket.gif" alt="Rocket" width="28" height="28" />
+  <img src="./assets/rocket.gif" alt="Rocket" width="28" height="28" style="vertical-align: middle;" />
   Tech Stack
 </h2>
+
 
 <div align="center" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="40" title="React" />
