@@ -10,7 +10,7 @@ I'm a full-stack developer specializing in Next.js with TypeScript on the fronte
 - Python: Penetration testing, face & hand gesture recognition  
 - Desktop Apps: Electron, WebRTC  
 
-![Three.js Animation](./assets/ImageToStl.com_3d-Hologramm-(Wavefront+OBJ).obj.gif)
+<img src="./assets/ImageToStl.com_3d-Hologramm-(Wavefront+OBJ).obj.gif" width="300" alt="Three.js Animation" />
 
 ## Featured Projects
 - **Financial Management System** – Scalable app for managing finances  
