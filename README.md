@@ -9,7 +9,7 @@
 
 ---
 
-## <img src="./assets/rocket.gif" alt="Rocket" width="35" height="35" /> Tech Stack
+## <img src="./assets/rocket.gif" alt="Rocket" width="35" height="35" /> - Tech Stack
 
 <div align="center" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
   <img src="./assets/physics.gif" width="40" title="React" />
@@ -23,8 +23,6 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/electron/electron-original.svg" width="40" title="Electron" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="40" title="Linux" />
 </div>
-
-
 
 ---
 
@@ -55,7 +53,7 @@
 
 ---
 
-## <img src="./assets/information.gif" alt="Project" width="35" height="35" style="vertical-align:middle;" /> About Me
+## <img src="./assets/information.gif" alt="Project" width="35" height="35" style="vertical-align:middle;" /> - About Me
 
 - 🔧 Building **Next.js** apps with **TypeScript** + GraphQL  
 - 🧪 Creating **penetration testing** and **vision-based** desktop tools in **Python**  
@@ -64,7 +62,7 @@
 
 ---
 
-## <img src="./assets/project.gif" alt="Project" width="35" height="35" style="vertical-align:middle;" /> Featured Projects
+## <img src="./assets/project.gif" alt="Project" width="35" height="35" style="vertical-align:middle;" /> - Featured Projects
 
 | Project | Description |
 |--------|-------------|
@@ -78,7 +76,7 @@
 
 ---
 
-## <img src="./assets/global-connection.gif" alt="global-connection" width="35" height="35" style="vertical-align:middle;" /> Let's Connect
+## <img src="./assets/global-connection.gif" alt="global-connection" width="35" height="35" style="vertical-align:middle;" /> - Let's Connect
 
 <p align="center">
   <a href="https://www.linkedin.com/in/ridwan-taufik-b3624325a/"><img src="https://img.icons8.com/ios-filled/50/0A66C2/linkedin.png" width="35" title="LinkedIn"/></a>
