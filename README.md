@@ -1,70 +1,68 @@
-<!-- README.md -->
-
-<h1 align="center">
-  <img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&size=30&pause=1000&color=00F7FF&center=true&vCenter=true&width=440&lines=Hey+there!+I'm+Ridwan+Taufik+👋" alt="Typing SVG" />
-</h1>
-
-
-<p align="center">A passionate full-stack developer who blends <strong>web & desktop technologies</strong> with a touch of <strong>Python wizardry</strong> 🧙‍♂️</p>
-
----
-
-## 🚀 Tech Stack
-
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="40" title="React"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg" width="40" title="Next.js" style="background:white; border-radius:5px;"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="40" title="TypeScript"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="40" title="Node.js"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" width="40" title="Express" style="filter: invert(100%)"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" width="40" title="GraphQL"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="40" title="PostgreSQL"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="40" title="Python"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/electron/electron-original.svg" width="40" title="Electron"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" width="40" title="OpenCV"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="40" title="Linux"/>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=26&pause=800&color=00F7FF&center=true&vCenter=true&width=600&lines=Hi%2C+I'm+Ridwan+Taufik+👋;Fullstack+%2B+AI+Developer;Loves+building+futuristic+apps!" alt="Typing Animation" />
 </p>
 
 ---
 
-## 🧠 About Me
+## 🛠️ Tech Stack
 
-- 🔧 Building **Next.js** apps with **TypeScript** + GraphQL  
-- 🧪 Creating **penetration testing** and **vision-based** desktop tools in **Python**  
-- 🔌 Developing chat, video, and screen-sharing tools with **Electron & WebRTC**  
-- 🤖 Passionate about AI, gesture control, and turning coffee into software
+<p align="center">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" width="50" title="React" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg" width="50" title="Next.js" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" width="50" title="TypeScript" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/graphql/graphql-plain.svg" width="50" title="GraphQL" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" width="50" title="Node.js" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg" width="50" title="Express" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg" width="50" title="PostgreSQL" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" width="50" title="Python" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/electron/electron-original.svg" width="50" title="Electron" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/webstorm/webstorm-original.svg" width="50" title="WebRTC" />
+</p>
 
 ---
 
-## 🔥 Featured Projects
+## 👨‍💻 About Me
+
+- Full-stack developer focused on futuristic apps
+- Specialized in web (Next.js + GraphQL) and desktop (Python + CV)
+- Obsessed with building intuitive interfaces + gesture-controlled apps
+
+---
+
+## ⭐ Featured Projects
 
 | Project | Description |
 |--------|-------------|
-| 💰 **Financial Management System** | Scalable platform for managing business & personal finances |
-| 🏥 **Hospital Information System (SIMRS)** | Robust system for managing hospital operations |
-| 🛒 **Sales Information System** | All-in-one solution for sales, inventory & reporting |
-| 📞 **Real-time Chat & Video Call App** | Web & desktop communication tools with WebRTC |
-| 🗣️ **English Learning App** | Interactive language learning with fun UX |
-| 🛡️ **Security Penetration Tools** | Python-based ethical hacking & testing tools |
-| ✋ **Face & Hand Gesture Recognition** | Desktop app for gesture-based UI control |
+| ![💻](https://img.icons8.com/color/48/finance.png) **Financial Management System** | Scalable app for managing company finances |
+| ![🏥](https://img.icons8.com/color/48/hospital-room.png) **Hospital Info System (SIMRS)** | Platform for managing hospital operations |
+| ![📈](https://img.icons8.com/color/48/sales-performance.png) **Sales System** | Complete sales, inventory, and reporting tool |
+| ![🎥](https://img.icons8.com/color/48/video-call.png) **Chat & Video Call App** | Realtime communication w/ WebRTC & Electron |
+| ![📚](https://img.icons8.com/color/48/language-skill.png) **English Learning App** | Interactive English language platform |
+| ![🔐](https://img.icons8.com/color/48/anonymous-mask.png) **Pentest Toolkit** | Python CLI & GUI tools for ethical hacking |
+| ![🖐️](https://img.icons8.com/color/48/hand.png) **Gesture Recognition App** | Desktop cursor control via hand gestures |
+
+> Gambar pakai icon dari [Icons8](https://icons8.com) biar modern dan bebas pakai.
 
 ---
 
-## 🌐 Let's Connect
+## 🌐 Connect With Me
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/ridwan-taufik-b3624325a/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="35" title="LinkedIn"/></a>
-  &nbsp;&nbsp;
-  <a href="https://www.instagram.com/ridwantaufk/"><img src="https://img.icons8.com/ios-glyphs/30/e4405f/instagram-new--v1.png" width="35" title="Instagram"/></a>
-  &nbsp;&nbsp;
-  <a href="https://ridwantaufk.github.io/ridwan-portfolio-fullstack-developer/"><img src="https://img.icons8.com/ios-filled/50/000000/domain.png" width="35" title="Website"/></a>
+  <a href="https://www.linkedin.com/in/ridwan-taufik-b3624325a/">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+  <a href="https://www.instagram.com/ridwantaufk/">
+    <img src="https://img.shields.io/badge/Instagram-C13584?style=for-the-badge&logo=instagram&logoColor=white" />
+  </a>
+  <a href="https://ridwantaufk.github.io/ridwan-portfolio-fullstack-developer/">
+    <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
 </p>
 
 ---
 
 <p align="center">
-  <img src="./assets/ImageToStl.com_3d-Hologramm-(Wavefront+OBJ).obj.gif" width="300" alt="Three.js Animation" />
+  <img src="./assets/ImageToStl.com_3d-Hologramm-(Wavefront+OBJ).obj.gif" width="260" alt="3D Hologram" />
 </p>
-<p align="center">
-  <em>"Code like a human, think like an AI." — Ridwan 2077</em>
-</p>
+
+<p align="center"><i>“Think futuristic, code realistically.”</i></p>
