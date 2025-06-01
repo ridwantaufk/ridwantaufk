@@ -11,12 +11,14 @@
 
 ## 🚀 Tech Stack
 
-
-<table align="center">
+<table align="center" cellspacing="0" cellpadding="0" style="border:none;">
   <tr>
-    <td align="center" width="100">
-      <img src="./assets/output-onlinegiftools.gif" alt="Spider Web Animation" width="80"/>
+    <!-- Spider Web GIF -->
+    <td align="center" valign="middle" style="padding-right: 50px;">
+      <img src="./assets/output-onlinegiftools.gif" alt="Spider Web Animation" width="80" />
     </td>
+
+    <!-- Tech Stack Icons -->
     <td align="left">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="40" title="React"/>
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg" width="40" title="Next.js" style="background:white; border-radius:5px;"/>
@@ -32,7 +34,6 @@
     </td>
   </tr>
 </table>
-
 
 
 ---
