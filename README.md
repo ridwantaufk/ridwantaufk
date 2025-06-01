@@ -13,11 +13,8 @@
   <span style="line-height: 28px;">Tech Stack</span>
 </h2>
 
-
-
-
 <div align="center" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="40" title="React" />
+  <img src="./assets/physics.gif" width="40" title="React" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg" width="40" title="Next.js" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="40" title="TypeScript" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="40" title="Node.js" />
@@ -69,7 +66,7 @@
 
 ---
 
-## 🔥 Featured Projects
+## <img src="./assets/project.gif" alt="Project" width="28" height="28" style="vertical-align:middle;" /> Featured Projects
 
 | Project | Description |
 |--------|-------------|
@@ -83,7 +80,7 @@
 
 ---
 
-## 🌐 Let's Connect
+## <img src="./assets/global-connection.gif" alt="global-connection" width="28" height="28" style="vertical-align:middle;" /> Let's Connect
 
 <p align="center">
   <a href="https://www.linkedin.com/in/ridwan-taufik-b3624325a/"><img src="https://img.icons8.com/ios-filled/50/0A66C2/linkedin.png" width="35" title="LinkedIn"/></a>
@@ -96,8 +93,9 @@
 ---
 
 <p align="center">
-  <img src="./assets/ImageToStl.com_3d-Hologramm-(Wavefront+OBJ).obj.gif" width="300" alt="Three.js Animation" />
+  <img src="./assets/backend.gif" width="500" alt="coding" />
 </p>
+
 <p align="center">
   <em>"If God ordained that humans sleep only three hours, I would dedicate every remaining moment to unraveling the mysteries of nature, until technology transcends the limits of time." — me 2024</em><br />
   <small>"Andai Tuhan menetapkan manusia hanya tidur tiga jam, niscaya aku akan mendedikasikan setiap detik tersisa untuk menyingkap rahasia alam semesta, hingga tercipta teknologi yang melampaui batas waktu." — me 2024</small>
