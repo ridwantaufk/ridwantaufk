@@ -8,11 +8,11 @@
 <p align="center">A passionate full-stack developer who blends <strong>web & desktop technologies</strong> with a touch of <strong>Python wizardry</strong></p>
 
 ---
-
 <h2>
-  <img src="./assets/rocket.gif" alt="Rocket" width="28" height="28" style="vertical-align: middle; margin-right: 8px;" />
-  Tech Stack
+  <img src="./assets/rocket.gif" alt="Rocket" width="28" height="28" />
+  <span style="line-height: 28px;">Tech Stack</span>
 </h2>
+
 
 
 
