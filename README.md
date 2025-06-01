@@ -26,30 +26,7 @@
 
 ---
 
-<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-  <!-- Lingkaran jaring laba-laba -->
-  <circle cx="100" cy="100" r="90" stroke="#0ff" stroke-width="1" fill="none" />
-  <circle cx="100" cy="100" r="70" stroke="#0ff" stroke-width="1" fill="none" />
-  <circle cx="100" cy="100" r="50" stroke="#0ff" stroke-width="1" fill="none" />
-  <circle cx="100" cy="100" r="30" stroke="#0ff" stroke-width="1" fill="none" />
-  <circle cx="100" cy="100" r="10" stroke="#0ff" stroke-width="1" fill="none" />
-  
-  <!-- Garis jaring laba-laba -->
-  <line x1="100" y1="10" x2="100" y2="190" stroke="#0ff" stroke-width="1" />
-  <line x1="10" y1="100" x2="190" y2="100" stroke="#0ff" stroke-width="1" />
-  <line x1="35" y1="35" x2="165" y2="165" stroke="#0ff" stroke-width="1" />
-  <line x1="165" y1="35" x2="35" y2="165" stroke="#0ff" stroke-width="1" />
-  
-  <!-- Animasi putar lambat -->
-  <animateTransform 
-    attributeName="transform" 
-    attributeType="XML" 
-    type="rotate" 
-    from="0 100 100" 
-    to="360 100 100" 
-    dur="60s" 
-    repeatCount="indefinite" />
-</svg>
+<img src="./assets/ezgif.com-animated-gif-maker.gif" />
 
 ---
 
