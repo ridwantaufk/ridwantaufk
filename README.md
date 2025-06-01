@@ -66,7 +66,7 @@
 
 | Project | Description |
 |--------|-------------|
-| <img src="https://img.icons8.com/color/48/finance.png" width="24" /> **Financial Management System** | Scalable platform for managing business & personal finances |
+| <img src="https://icons8.com/icon/2TbVhuRExmQp/financial" width="24" /> **Financial Management System** | Scalable platform for managing business & personal finances |
 | <img src="https://img.icons8.com/color/48/hospital-room.png" width="24" /> **Hospital Information System (SIMRS)** | Robust system for managing hospital operations |
 | <img src="https://img.icons8.com/color/48/sales-performance.png" width="24" /> **Sales Information System** | All-in-one solution for sales, inventory & reporting |
 | <img src="https://img.icons8.com/color/48/video-call.png" width="24" /> **Real-time Chat & Video Call App** | Web & desktop communication tools with WebRTC |
