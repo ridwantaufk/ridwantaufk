@@ -1,7 +1,7 @@
 <!-- README.md -->
 
 <h1 align="center">
-  <img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&size=30&pause=1000&color=00F7FF&center=true&vCenter=true&width=800&lines=Hey+there!+I'm+Ridwan+Taufik;Fullstack+Developer;Web+%26+Desktop+Specialist" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&size=30&pause=1000&color=800080&center=true&vCenter=true&width=800&lines=Hey+there!+I'm+Ridwan+Taufik;Fullstack+Developer;Web+%26+Desktop+Specialist" alt="Typing SVG" />
 </h1>
 
 
