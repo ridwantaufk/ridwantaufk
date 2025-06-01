@@ -1,70 +1,67 @@
-<h1 align="center">Hi, I'm Ridwan Taufik 👾</h1>
-<p align="center">🧑‍💻 Fullstack Sorcerer · 👁️‍🗨️ Computer Vision Tinkerer · 🛡️ Security Dabbler · 🧠 Learning, Building, Evolving</p>
+<!-- README.md -->
+
+<h1 align="center">Hey there! I'm Ridwan Taufik 👋</h1>
+
+<p align="center">A passionate full-stack developer who blends <strong>web & desktop technologies</strong> with a touch of <strong>Python wizardry</strong> 🧙‍♂️</p>
 
 ---
 
-## 🧬 About Me
-I'm a full-stack developer who thrives in building scalable, interactive, and sometimes a bit cheeky applications. I specialize in:
-
-- ✨ Frontend sorcery with **Next.js + TypeScript**
-- 🔮 Backend wizardry with **Node.js, Express & GraphQL**
-- 🧠 Tinkering with **Python desktop apps** (security, CV, AI)
-- 🖥️ Electron desktop apps with **chat, video calls, and screen sharing**
-- 🧤 Gesture-controlled apps for that “Tony Stark” vibe
-
-> 🧪 “Code is my canvas. Bugs are just spicy features.”
-
----
-
-## ⚙️ Skills & Tech Stack
+## 🚀 Tech Stack
 
 <p align="center">
-  <img src="https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white"/>
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
-  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white"/>
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/>
-  <img src="https://img.shields.io/badge/GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white"/>
-  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Electron-47848F?style=for-the-badge&logo=electron&logoColor=white"/>
-  <img src="https://img.shields.io/badge/WebRTC-005A9C?style=for-the-badge&logo=webrtc&logoColor=white"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="40" title="React"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg" width="40" title="Next.js" style="background:white; border-radius:5px;"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="40" title="TypeScript"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="40" title="Node.js"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" width="40" title="Express" style="filter: invert(100%)"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" width="40" title="GraphQL"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="40" title="PostgreSQL"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="40" title="Python"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/electron/electron-original.svg" width="40" title="Electron"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" width="40" title="OpenCV"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="40" title="Linux"/>
 </p>
 
 ---
 
-## 🚀 Featured Projects
+## 🧠 About Me
+
+- 🔧 Building **Next.js** apps with **TypeScript** + GraphQL  
+- 🧪 Creating **penetration testing** and **vision-based** desktop tools in **Python**  
+- 🔌 Developing chat, video, and screen-sharing tools with **Electron & WebRTC**  
+- 🤖 Passionate about AI, gesture control, and turning coffee into software
+
+---
+
+## 🔥 Featured Projects
+
 | Project | Description |
 |--------|-------------|
-| 💰 **Financial Management System** | Robust app for managing budgets, expenses, and revenues with style |
-| 🏥 **Hospital Info System (SIMRS)** | Digitizing hospital operations and making docs happy |
-| 🛒 **Sales & Inventory System** | One-stop solution to track sales and stock like a boss |
-| 💬 **Real-time Chat & Video App** | Web + Electron app with crystal-clear calls |
-| 🇬🇧 **English Learning App** | Shadowing + speaking practice in one beautiful package |
-| 🛠️ **Security Tools (Python)** | CLI/GUI tools for penetration testing & network scanning |
-| 🖐️ **Gesture Recognition App** | Move cursor with your hand like you're in *Minority Report* |
+| 💰 **Financial Management System** | Scalable platform for managing business & personal finances |
+| 🏥 **Hospital Information System (SIMRS)** | Robust system for managing hospital operations |
+| 🛒 **Sales Information System** | All-in-one solution for sales, inventory & reporting |
+| 📞 **Real-time Chat & Video Call App** | Web & desktop communication tools with WebRTC |
+| 🗣️ **English Learning App** | Interactive language learning with fun UX |
+| 🛡️ **Security Penetration Tools** | Python-based ethical hacking & testing tools |
+| ✋ **Face & Hand Gesture Recognition** | Desktop app for gesture-based UI control |
 
 ---
 
-## 🌐 Let's Connect!
+## 🌐 Let's Connect
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/ridwan-taufik-b3624325a/">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
-  </a>
-  <a href="https://www.instagram.com/ridwantaufk/">
-    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/>
-  </a>
-  <a href="https://ridwantaufk.github.io/ridwan-portfolio-fullstack-developer/">
-    <img src="https://img.shields.io/badge/Website-000000?style=for-the-badge&logo=github&logoColor=white"/>
-  </a>
+  <a href="https://www.linkedin.com/in/ridwan-taufik-b3624325a/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="35" title="LinkedIn"/></a>
+  &nbsp;&nbsp;
+  <a href="https://www.instagram.com/ridwantaufk/"><img src="https://img.icons8.com/ios-glyphs/30/e4405f/instagram-new--v1.png" width="35" title="Instagram"/></a>
+  &nbsp;&nbsp;
+  <a href="https://ridwantaufk.github.io/ridwan-portfolio-fullstack-developer/"><img src="https://img.icons8.com/ios-filled/50/000000/domain.png" width="35" title="Website"/></a>
 </p>
 
 ---
 
-## 🎥 Bonus Visuals (because we can)
 <p align="center">
-  <img src="./assets/ImageToStl.com_3d-Hologramm-(Wavefront+OBJ).obj.gif" width="300" alt="Three.js Animation"/>
-  <br/>
-  <em>“This is how I visualize my code debugging itself.”</em>
+  <img src="./assets/ImageToStl.com_3d-Hologramm-(Wavefront+OBJ).obj.gif" width="300" alt="Three.js Animation" />
+</p>
+<p align="center">
+  <em>"Code like a human, think like an AI." — Ridwan 2077</em>
 </p>
