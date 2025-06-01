@@ -10,8 +10,7 @@
 ---
 
 <h2>
-  <img src="./assets/rocket.gif" alt="Rocket" width="25" 
-       style="vertical-align: middle; margin-right: 8px; border-radius: 50%;" />
+  <img src="./assets/rocket.gif" alt="Rocket" width="25" style="vertical-align: middle; margin-right: 8px; border-radius: 50%;" />
   Tech Stack
 </h2>
 
