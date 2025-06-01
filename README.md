@@ -1,8 +1,9 @@
 <!-- README.md -->
 
 <h1 align="center">
-  <img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&size=30&pause=1000&color=00F7FF&center=true&vCenter=true&width=440&lines=Hey+there!+I'm+Ridwan+Taufik" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&size=30&pause=1000&color=00F7FF&center=true&vCenter=true&width=650&lines=Hey+there!+I'm+Ridwan+Taufik;Fullstack+Developer+%7C+Web+%26+Desktop+Specialist" alt="Typing SVG" />
 </h1>
+
 
 <p align="center">A passionate full-stack developer who blends <strong>web & desktop technologies</strong> with a touch of <strong>Python wizardry</strong></p>
 
