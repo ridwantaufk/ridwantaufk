@@ -1,20 +1,7 @@
 <!-- README.md -->
 
 <h1 align="center">
-  <svg width="600" height="60" viewBox="0 0 600 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <filter id="glow" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
-        <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#00f7ff" flood-opacity="0.7"/>
-        <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#00f7ff" flood-opacity="0.4"/>
-      </filter>
-    </defs>
-    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Fira Code, monospace" font-size="32" fill="#00f7ff" filter="url(#glow)">
-      Hey there! I'm Ridwan Taufik
-    </text>
-    <text x="50%" y="85%" dominant-baseline="middle" text-anchor="middle" font-family="Fira Code, monospace" font-size="20" fill="#0ff" opacity="0.7" filter="url(#glow)">
-      Fullstack Developer — Web & Desktop Specialist
-    </text>
-  </svg>
+  <img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&size=30&pause=1000&color=00F7FF&center=true&vCenter=true&width=800&lines=Hey+there!+I'm+Ridwan+Taufik;Fullstack+Developer;Web+%26+Desktop+Specialist" alt="Typing SVG" />
 </h1>
 
 
