@@ -94,6 +94,6 @@
 
 <p align="center">
   <em>"If God ordained that humans sleep only three hours, I would dedicate every remaining moment to unraveling the mysteries of nature, until technology transcends the limits of time." — me 2024</em><br />
-  <small>"Andai Tuhan menetapkan manusia hanya tidur tiga jam, niscaya aku akan mendedikasikan setiap detik tersisa untuk menyingkap rahasia alam semesta, hingga tercipta teknologi yang melampaui batas waktu." — me 2024</small>
+  <small>"Andai Tuhan menetapkan manusia hanya tidur tiga jam, niscaya aku akan mendedikasikan setiap detik tersisa untuk menyingkap rahasia alam semesta, hingga tercipta teknologi yang melampaui batas waktu."</small>
 </p>
 
