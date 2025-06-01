@@ -10,9 +10,10 @@
 ---
 
 <h2>
-  <img src="./assets/rocket.gif" alt="Rocket" width="28" height="28" style="vertical-align: middle;" />
+  <img src="./assets/rocket.gif" alt="Rocket" width="28" height="28" style="vertical-align: middle; margin-right: 8px;" />
   Tech Stack
 </h2>
+
 
 
 <div align="center" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
