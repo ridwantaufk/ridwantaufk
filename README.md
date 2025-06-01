@@ -10,17 +10,7 @@
 ---
 
 <h2>
-  <span style="
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    overflow: hidden;
-    vertical-align: middle;
-    margin-right: 8px;
-  ">
-    <img src="./assets/rocket.gif" alt="Rocket" width="25" height="25" style="display: block;" />
-  </span>
+    <img src="./assets/rocket.gif" alt="Rocket" width="28" height="28" />
   Tech Stack
 </h2>
 
