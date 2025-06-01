@@ -11,6 +11,9 @@
 
 ## 🚀 Tech Stack
 
+
+![Spider Web Animation](./assets/output-onlinegiftools.gif)
+
 <p align="center">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="40" title="React"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg" width="40" title="Next.js" style="background:white; border-radius:5px;"/>
