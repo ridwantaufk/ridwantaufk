@@ -10,10 +10,19 @@
 ---
 
 <h2>
-  <img src="./assets/rocket.gif" alt="Rocket" width="25" style="vertical-align: middle; margin-right: 8px; border-radius: 50%;" />
+  <span style="
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    vertical-align: middle;
+    margin-right: 8px;
+  ">
+    <img src="./assets/rocket.gif" alt="Rocket" width="25" height="25" style="display: block;" />
+  </span>
   Tech Stack
 </h2>
-
 
 <div align="center" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="40" title="React" />
