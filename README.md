@@ -65,5 +65,7 @@
   <img src="./assets/ImageToStl.com_3d-Hologramm-(Wavefront+OBJ).obj.gif" width="300" alt="Three.js Animation" />
 </p>
 <p align="center">
-  <em>"Code like a human, think like an AI." — Ridwan 2077</em>
+  <em>"If God ordained that humans sleep only three hours, I would dedicate every remaining moment to unraveling the mysteries of nature, until technology transcends the limits of time." — me 2024</em><br />
+  <small>"Andai Tuhan menetapkan manusia hanya tidur tiga jam, niscaya aku akan mendedikasikan setiap detik tersisa untuk menyingkap rahasia alam semesta, hingga tercipta teknologi yang melampaui batas waktu." — me 2024</small>
 </p>
+
