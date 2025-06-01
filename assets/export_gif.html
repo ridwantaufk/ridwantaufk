@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Spider Web Canvas</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        background: linear-gradient(
+          135deg,
+          #0c0c0c 0%,
+          #1a1a2e 50%,
+          #16213e 100%
+        );
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+      }
+
+      .export-controls {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 100;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 15px;
+        border-radius: 10px;
+        border: 1px solid rgba(0, 240, 255, 0.3);
+      }
+
+      .export-btn {
+        background: linear-gradient(45deg, #00f0ff, #0080ff);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        margin-bottom: 10px;
+        display: block;
+        width: 100%;
+      }
+
+      .export-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 240, 255, 0.4);
+      }
+
+      .export-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .status {
+        color: #00f0ff;
+        font-size: 12px;
+        margin-top: 5px;
+        text-align: center;
+      }
+
+      #spiderCanvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .progress-bar {
+        width: 100%;
+        height: 4px;
+        background: rgba(0, 240, 255, 0.2);
+        border-radius: 2px;
+        overflow: hidden;
+        margin: 10px 0;
+      }
+
+      .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #00f0ff, #0080ff);
+        width: 0%;
+        transition: width 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="spiderCanvas"></canvas>
+
+    <div class="export-controls">
+      <button id="exportGif" class="export-btn">
+        🎬 Export 10s GIF (60fps)
+      </button>
+      <button id="exportPng" class="export-btn">🖼️ Save as PNG</button>
+      <button id="exportPngSequence" class="export-btn">
+        📁 Export PNG Sequence (60fps, 10s)
+      </button>
+      <div class="progress-bar" id="progressBar" style="display: none">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div id="status" class="status"></div>
+    </div>
+
+    <script>
+      // JSZip library for creating ZIP files
+      class SimpleZip {
+        constructor() {
+          this.files = [];
+        }
+
+        addFile(filename, data) {
+          this.files.push({
+            name: filename,
+            data: data,
+            isBase64: typeof data === "string" && data.startsWith("data:"),
+          });
+        }
+
+        async generate() {
+          // Simple ZIP file structure
+          const zipData = [];
+          const centralDirectory = [];
+          let offset = 0;
+
+          for (let i = 0; i < this.files.length; i++) {
+            const file = this.files[i];
+            let fileData;
+
+            if (file.isBase64) {
+              // Convert base64 to binary
+              const base64Data = file.data.split(",")[1];
+              const binaryString = atob(base64Data);
+              fileData = new Uint8Array(binaryString.length);
+              for (let j = 0; j < binaryString.length; j++) {
+                fileData[j] = binaryString.charCodeAt(j);
+              }
+            } else {
+              fileData = new TextEncoder().encode(file.data);
+            }
+
+            // Local file header
+            const header = new Uint8Array(30 + file.name.length);
+            const view = new DataView(header.buffer);
+
+            view.setUint32(0, 0x04034b50, true); // Local file header signature
+            view.setUint16(4, 20, true); // Version needed
+            view.setUint16(6, 0, true); // General purpose bit flag
+            view.setUint16(8, 0, true); // Compression method (stored)
+            view.setUint16(10, 0, true); // File last modification time
+            view.setUint16(12, 0, true); // File last modification date
+            view.setUint32(14, this.crc32(fileData), true); // CRC-32
+            view.setUint32(18, fileData.length, true); // Compressed size
+            view.setUint32(22, fileData.length, true); // Uncompressed size
+            view.setUint16(26, file.name.length, true); // File name length
+            view.setUint16(28, 0, true); // Extra field length
+
+            // File name
+            const nameBytes = new TextEncoder().encode(file.name);
+            header.set(nameBytes, 30);
+
+            // Add to ZIP
+            zipData.push(header, fileData);
+
+            // Central directory entry
+            const cdEntry = new Uint8Array(46 + file.name.length);
+            const cdView = new DataView(cdEntry.buffer);
+
+            cdView.setUint32(0, 0x02014b50, true); // Central directory signature
+            cdView.setUint16(4, 20, true); // Version made by
+            cdView.setUint16(6, 20, true); // Version needed
+            cdView.setUint16(8, 0, true); // General purpose bit flag
+            cdView.setUint16(10, 0, true); // Compression method
+            cdView.setUint16(12, 0, true); // File last modification time
+            cdView.setUint16(14, 0, true); // File last modification date
+            cdView.setUint32(16, this.crc32(fileData), true); // CRC-32
+            cdView.setUint32(20, fileData.length, true); // Compressed size
+            cdView.setUint32(24, fileData.length, true); // Uncompressed size
+            cdView.setUint16(28, file.name.length, true); // File name length
+            cdView.setUint16(30, 0, true); // Extra field length
+            cdView.setUint16(32, 0, true); // File comment length
+            cdView.setUint16(34, 0, true); // Disk number start
+            cdView.setUint16(36, 0, true); // Internal file attributes
+            cdView.setUint32(38, 0, true); // External file attributes
+            cdView.setUint32(42, offset, true); // Relative offset of local header
+
+            cdEntry.set(nameBytes, 46);
+            centralDirectory.push(cdEntry);
+
+            offset += header.length + fileData.length;
+          }
+
+          // Calculate total size
+          let totalSize = 0;
+          zipData.forEach((chunk) => (totalSize += chunk.length));
+
+          let cdSize = 0;
+          centralDirectory.forEach((entry) => (cdSize += entry.length));
+
+          // End of central directory record
+          const eocd = new Uint8Array(22);
+          const eocdView = new DataView(eocd.buffer);
+
+          eocdView.setUint32(0, 0x06054b50, true); // End of central directory signature
+          eocdView.setUint16(4, 0, true); // Number of this disk
+          eocdView.setUint16(6, 0, true); // Disk where central directory starts
+          eocdView.setUint16(8, this.files.length, true); // Number of central directory records on this disk
+          eocdView.setUint16(10, this.files.length, true); // Total number of central directory records
+          eocdView.setUint32(12, cdSize, true); // Size of central directory
+          eocdView.setUint32(16, totalSize, true); // Offset of start of central directory
+          eocdView.setUint16(20, 0, true); // ZIP file comment length
+
+          // Combine all parts
+          const result = new Uint8Array(totalSize + cdSize + 22);
+          let resultOffset = 0;
+
+          zipData.forEach((chunk) => {
+            result.set(chunk, resultOffset);
+            resultOffset += chunk.length;
+          });
+
+          centralDirectory.forEach((entry) => {
+            result.set(entry, resultOffset);
+            resultOffset += entry.length;
+          });
+
+          result.set(eocd, resultOffset);
+
+          return new Blob([result], { type: "application/zip" });
+        }
+
+        crc32(data) {
+          const table = [];
+          for (let i = 0; i < 256; i++) {
+            let c = i;
+            for (let j = 0; j < 8; j++) {
+              c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1;
+            }
+            table[i] = c;
+          }
+
+          let crc = 0 ^ -1;
+          for (let i = 0; i < data.length; i++) {
+            crc = (crc >>> 8) ^ table[(crc ^ data[i]) & 0xff];
+          }
+          return (crc ^ -1) >>> 0;
+        }
+      }
+      // Improved GIF Encoder with better color handling
+      class ImprovedGIFEncoder {
+        constructor(width, height, options = {}) {
+          this.width = Math.min(width, 600);
+          this.height = Math.min(height, 400);
+          this.delay = options.delay || 17; // 60fps = ~17ms
+          this.frames = [];
+          this.onProgress = options.onProgress || (() => {});
+          this.transparent = options.transparent || false;
+        }
+
+        addFrame(canvas) {
+          // Create scaled canvas with better quality
+          const scaledCanvas = document.createElement("canvas");
+          scaledCanvas.width = this.width;
+          scaledCanvas.height = this.height;
+          const ctx = scaledCanvas.getContext("2d");
+
+          // Enable better image smoothing
+          ctx.imageSmoothingEnabled = true;
+          ctx.imageSmoothingQuality = "high";
+
+          // Clear with transparent background if needed
+          if (this.transparent) {
+            ctx.clearRect(0, 0, this.width, this.height);
+          }
+
+          // Scale and draw with better quality
+          ctx.drawImage(canvas, 0, 0, this.width, this.height);
+
+          // Get image data
+          const imageData = ctx.getImageData(0, 0, this.width, this.height);
+          const processedData = this.processImageData(imageData.data);
+
+          this.frames.push(processedData);
+        }
+
+        processImageData(data) {
+          const processed = new Uint8Array(this.width * this.height);
+
+          for (let i = 0; i < data.length; i += 4) {
+            const r = data[i];
+            const g = data[i + 1];
+            const b = data[i + 2];
+            const a = data[i + 3];
+
+            const pixelIndex = i / 4;
+
+            // Handle transparency
+            if (this.transparent && a < 128) {
+              processed[pixelIndex] = 0; // Transparent
+              continue;
+            }
+
+            // Better color mapping for cyan/blue spectrum
+            if (r < 30 && g < 30 && b < 30) {
+              processed[pixelIndex] = 1; // Near black
+            } else if (g > 200 && b > 200 && r < 100) {
+              // Cyan spectrum - preserve these colors better
+              const intensity = Math.min(255, Math.max(100, (g + b) / 2));
+              processed[pixelIndex] = Math.floor((intensity / 255) * 200) + 50;
+            } else if (b > 150 && r < 100) {
+              // Blue spectrum
+              const intensity = Math.min(255, Math.max(50, b));
+              processed[pixelIndex] = Math.floor((intensity / 255) * 100) + 150;
+            } else {
+              // Other colors - map to grayscale
+              const gray = Math.round(r * 0.299 + g * 0.587 + b * 0.114);
+              processed[pixelIndex] = Math.min(
+                254,
+                Math.max(2, Math.floor(gray / 8) * 8)
+              );
+            }
+          }
+
+          return processed;
+        }
+
+        createColorTable() {
+          const palette = new Uint8Array(256 * 3);
+
+          // Index 0: Transparent (if needed)
+          palette[0] = 0;
+          palette[1] = 0;
+          palette[2] = 0;
+
+          // Index 1: Very dark
+          palette[3] = 12;
+          palette[4] = 12;
+          palette[5] = 12;
+
+          // Indices 2-49: Dark grays
+          for (let i = 2; i < 50; i++) {
+            const val = Math.floor(((i - 2) / 48) * 50);
+            palette[i * 3] = val;
+            palette[i * 3 + 1] = val;
+            palette[i * 3 + 2] = val;
+          }
+
+          // Indices 50-249: Cyan spectrum (main web colors)
+          for (let i = 50; i < 250; i++) {
+            const intensity = (i - 50) / 200;
+            palette[i * 3] = Math.round(intensity * 20); // R - keep low
+            palette[i * 3 + 1] = Math.round(50 + intensity * 200); // G - cyan
+            palette[i * 3 + 2] = Math.round(100 + intensity * 155); // B - cyan
+          }
+
+          // Indices 250-255: Blue spectrum
+          for (let i = 250; i < 256; i++) {
+            const intensity = (i - 250) / 6;
+            palette[i * 3] = Math.round(intensity * 30);
+            palette[i * 3 + 1] = Math.round(intensity * 100);
+            palette[i * 3 + 2] = Math.round(150 + intensity * 105);
+          }
+
+          return palette;
+        }
+
+        async render() {
+          return new Promise((resolve) => {
+            try {
+              const gif = this.createGIF();
+              const blob = new Blob([gif], { type: "image/gif" });
+              resolve(blob);
+            } catch (error) {
+              console.error("GIF creation error:", error);
+              resolve(null);
+            }
+          });
+        }
+
+        createGIF() {
+          const palette = this.createColorTable();
+          let gif = new Uint8Array(0);
+
+          const append = (data) => {
+            const newGif = new Uint8Array(gif.length + data.length);
+            newGif.set(gif);
+            newGif.set(data, gif.length);
+            gif = newGif;
+          };
+
+          // GIF89a header
+          append(new TextEncoder().encode("GIF89a"));
+
+          // Logical Screen Descriptor
+          const lsd = new Uint8Array(7);
+          lsd[0] = this.width & 0xff;
+          lsd[1] = (this.width >> 8) & 0xff;
+          lsd[2] = this.height & 0xff;
+          lsd[3] = (this.height >> 8) & 0xff;
+          lsd[4] = 0xf7; // Global color table info
+          lsd[5] = this.transparent ? 0 : 1; // Background color
+          lsd[6] = 0; // Pixel aspect ratio
+          append(lsd);
+
+          // Global Color Table
+          append(palette);
+
+          // Application Extension for looping
+          append(new Uint8Array([0x21, 0xff, 0x0b]));
+          append(new TextEncoder().encode("NETSCAPE2.0"));
+          append(new Uint8Array([0x03, 0x01, 0x00, 0x00, 0x00]));
+
+          // Add frames
+          for (let i = 0; i < this.frames.length; i++) {
+            this.onProgress(i / this.frames.length);
+
+            // Graphic Control Extension
+            const gce = new Uint8Array(8);
+            gce[0] = 0x21; // Extension introducer
+            gce[1] = 0xf9; // Graphic control label
+            gce[2] = 0x04; // Block size
+            gce[3] = this.transparent ? 0x09 : 0x08; // Disposal + transparency
+            gce[4] = this.delay & 0xff;
+            gce[5] = (this.delay >> 8) & 0xff;
+            gce[6] = this.transparent ? 0 : 255; // Transparent color index
+            gce[7] = 0x00; // Block terminator
+            append(gce);
+
+            // Image Descriptor
+            const id = new Uint8Array(10);
+            id[0] = 0x2c; // Image separator
+            id[1] = 0x00;
+            id[2] = 0x00; // Left
+            id[3] = 0x00;
+            id[4] = 0x00; // Top
+            id[5] = this.width & 0xff;
+            id[6] = (this.width >> 8) & 0xff;
+            id[7] = this.height & 0xff;
+            id[8] = (this.height >> 8) & 0xff;
+            id[9] = 0x00; // No local color table
+            append(id);
+
+            // Image Data
+            const compressed = this.compressImageData(this.frames[i]);
+            append(compressed);
+          }
+
+          // Trailer
+          append(new Uint8Array([0x3b]));
+          return gif;
+        }
+
+        compressImageData(data) {
+          const result = [];
+          const codeSize = 8;
+
+          result.push(codeSize);
+
+          // Improved compression
+          const chunkSize = 254;
+          for (let i = 0; i < data.length; i += chunkSize) {
+            const chunk = data.slice(i, i + chunkSize);
+            result.push(chunk.length);
+            result.push(...chunk);
+          }
+
+          result.push(0); // Block terminator
+          return new Uint8Array(result);
+        }
+      }
+
+      const canvas = document.getElementById("spiderCanvas");
+      const ctx = canvas.getContext("2d");
+
+      let width = (canvas.width = window.innerWidth);
+      let height = (canvas.height = window.innerHeight);
+
+      const resize = () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      };
+
+      window.addEventListener("resize", resize);
+
+      // Create particles array
+      const particles = [];
+
+      // Initialize particles
+      for (let i = 0; i < 60; i++) {
+        particles.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 1.5,
+          vy: (Math.random() - 0.5) * 1.5,
+        });
+      }
+
+      // Distance calculation function
+      const distance = (a, b) => {
+        return Math.sqrt((a.x - b.x) ** 2 + (a.y - b.y) ** 2);
+      };
+
+      // Animation function
+      const animate = () => {
+        // Clear canvas with transparent background for GIF
+        ctx.clearRect(0, 0, width, height);
+
+        // Add slight dark background (will be made transparent in GIF)
+        ctx.fillStyle = "rgba(12, 12, 12, 0.95)";
+        ctx.fillRect(0, 0, width, height);
+
+        // Update and draw particles
+        for (let p of particles) {
+          // Update position
+          p.x += p.vx;
+          p.y += p.vy;
+
+          // Bounce off edges
+          if (p.x < 0 || p.x > width) p.vx *= -1;
+          if (p.y < 0 || p.y > height) p.vy *= -1;
+
+          // Keep particles in bounds
+          p.x = Math.max(0, Math.min(width, p.x));
+          p.y = Math.max(0, Math.min(height, p.y));
+
+          // Draw particle with glow effect
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, 3, 0, Math.PI * 2);
+          ctx.fillStyle = "#00f0ff";
+          ctx.fill();
+
+          // Add glow
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, 6, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(0, 240, 255, 0.3)";
+          ctx.fill();
+        }
+
+        // Draw lines between close particles
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const d = distance(particles[i], particles[j]);
+
+            if (d < 100) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              const opacity = (1 - d / 100) * 0.8;
+              ctx.strokeStyle = `rgba(0, 240, 255, ${opacity})`;
+              ctx.lineWidth = Math.max(1, opacity * 2);
+              ctx.stroke();
+            }
+          }
+        }
+
+        requestAnimationFrame(animate);
+      };
+
+      // Start animation
+      animate();
+
+      // Export functions
+      const exportGifBtn = document.getElementById("exportGif");
+      const exportPngBtn = document.getElementById("exportPng");
+      const exportPngSequenceBtn = document.getElementById("exportPngSequence");
+      const statusDiv = document.getElementById("status");
+      const progressBar = document.getElementById("progressBar");
+      const progressFill = document.getElementById("progressFill");
+
+      // Export as GIF with 60fps, 10 seconds, transparent background
+      exportGifBtn.addEventListener("click", async () => {
+        exportGifBtn.disabled = true;
+        statusDiv.style.color = "#00f0ff";
+        statusDiv.textContent = "Preparing GIF export...";
+        progressBar.style.display = "block";
+        progressFill.style.width = "0%";
+
+        try {
+          const fps = 60;
+          const duration = 10; // 10 seconds as requested
+          const totalFrames = fps * duration; // 600 frames
+          const frameDelay = Math.round(1000 / fps); // ~17ms for 60fps
+
+          // Create encoder with transparent background
+          const encoder = new ImprovedGIFEncoder(width, height, {
+            delay: frameDelay,
+            transparent: true, // Enable transparency
+            onProgress: (progress) => {
+              const percent = Math.round(progress * 50 + 50);
+              progressFill.style.width = percent + "%";
+              statusDiv.textContent = `Creating GIF: ${Math.round(
+                progress * 100
+              )}%`;
+            },
+          });
+
+          let frameCount = 0;
+          statusDiv.textContent = "Capturing frames...";
+
+          const captureFrame = () => {
+            return new Promise((resolve) => {
+              encoder.addFrame(canvas);
+              frameCount++;
+
+              const progress = (frameCount / totalFrames) * 50;
+              progressFill.style.width = progress + "%";
+              statusDiv.textContent = `Capturing frame ${frameCount}/${totalFrames}`;
+
+              if (frameCount < totalFrames) {
+                // Use normal frame rate for capturing
+                setTimeout(() => {
+                  requestAnimationFrame(() => {
+                    captureFrame().then(resolve);
+                  });
+                }, frameDelay);
+              } else {
+                resolve();
+              }
+            });
+          };
+
+          await captureFrame();
+
+          statusDiv.textContent = "Processing frames...";
+          progressFill.style.width = "50%";
+
+          // Create GIF
+          const blob = await encoder.render();
+
+          if (blob) {
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "spider-web-60fps-10s-transparent.gif";
+            a.click();
+            URL.revokeObjectURL(url);
+
+            statusDiv.textContent =
+              "GIF saved successfully! (60fps, 10s, transparent)";
+            progressFill.style.width = "100%";
+          } else {
+            throw new Error("Failed to create GIF");
+          }
+        } catch (error) {
+          console.error("GIF Export Error:", error);
+          statusDiv.textContent = "Error creating GIF. Please try again.";
+          statusDiv.style.color = "#ff4444";
+        } finally {
+          setTimeout(() => {
+            exportGifBtn.disabled = false;
+            progressBar.style.display = "none";
+            statusDiv.textContent = "";
+          }, 3000);
+        }
+      });
+
+      // Export to PNG
+      exportPngBtn.addEventListener("click", () => {
+        const link = document.createElement("a");
+        link.download = "spider-web-frame.png";
+        link.href = canvas.toDataURL();
+        link.click();
+
+        statusDiv.textContent = "PNG saved successfully!";
+        setTimeout(() => (statusDiv.textContent = ""), 3000);
+      });
+
+      // Export PNG Sequence to ZIP
+      exportPngSequenceBtn.addEventListener("click", async () => {
+        exportPngSequenceBtn.disabled = true;
+        statusDiv.style.color = "#00f0ff";
+        statusDiv.textContent = "Preparing PNG sequence export...";
+        progressBar.style.display = "block";
+        progressFill.style.width = "0%";
+
+        try {
+          const fps = 60;
+          const duration = 10; // 10 seconds
+          const totalFrames = fps * duration; // 600 frames
+          const frameDelay = Math.round(1000 / fps); // ~17ms for 60fps
+
+          const zip = new SimpleZip();
+          let frameCount = 0;
+
+          statusDiv.textContent = "Capturing PNG frames...";
+
+          const captureFrame = () => {
+            return new Promise((resolve) => {
+              // Capture current frame as PNG
+              const dataURL = canvas.toDataURL("image/png");
+
+              // Add to ZIP with zero-padded filename
+              const frameNumber = frameCount.toString().padStart(4, "0");
+              const filename = `frame_${frameNumber}.png`;
+              zip.addFile(filename, dataURL);
+
+              frameCount++;
+
+              const progress = (frameCount / totalFrames) * 90; // 90% for capture, 10% for ZIP creation
+              progressFill.style.width = progress + "%";
+              statusDiv.textContent = `Capturing PNG ${frameCount}/${totalFrames}`;
+
+              if (frameCount < totalFrames) {
+                setTimeout(() => {
+                  requestAnimationFrame(() => {
+                    captureFrame().then(resolve);
+                  });
+                }, frameDelay);
+              } else {
+                resolve();
+              }
+            });
+          };
+
+          await captureFrame();
+
+          statusDiv.textContent = "Creating ZIP file...";
+          progressFill.style.width = "90%";
+
+          // Generate ZIP file
+          const zipBlob = await zip.generate();
+
+          if (zipBlob) {
+            const url = URL.createObjectURL(zipBlob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "spider-web-png-sequence-60fps-10s.zip";
+            a.click();
+            URL.revokeObjectURL(url);
+
+            statusDiv.textContent = `ZIP saved! ${totalFrames} PNG files (60fps, 10s)`;
+            progressFill.style.width = "100%";
+          } else {
+            throw new Error("Failed to create ZIP file");
+          }
+        } catch (error) {
+          console.error("PNG Sequence Export Error:", error);
+          statusDiv.textContent =
+            "Error creating PNG sequence. Please try again.";
+          statusDiv.style.color = "#ff4444";
+        } finally {
+          setTimeout(() => {
+            exportPngSequenceBtn.disabled = false;
+            progressBar.style.display = "none";
+            statusDiv.textContent = "";
+          }, 3000);
+        }
+      });
+
+      // Cleanup on page unload
+      window.addEventListener("beforeunload", () => {
+        window.removeEventListener("resize", resize);
+      });
+    </script>
+  </body>
+</html>
