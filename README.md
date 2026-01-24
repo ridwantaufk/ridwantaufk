@@ -60,7 +60,7 @@
   &nbsp;&nbsp;
   <a href="https://www.instagram.com/ridwantaufk/"><img src="https://img.icons8.com/ios-filled/50/E4405F/instagram-new.png" width="35" title="Instagram"/></a>
   &nbsp;&nbsp;
-  <a href="https://ridwantaufk.com"><img src="https://img.icons8.com/ios-filled/50/000000/domain.png" width="35" title="Website"/></a>
+  <a href="https://ridwantaufik.com"><img src="https://img.icons8.com/ios-filled/50/000000/domain.png" width="35" title="Website"/></a>
 </p>
 
 ---
