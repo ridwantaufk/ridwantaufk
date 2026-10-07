@@ -44,14 +44,14 @@
 
 | Project | Description |
 |--------|-------------|
-| <img src="https://icons8.com/icon/2TbVhuRExmQp/financial" width="24" /> **Financial Management System** | Scalable platform for managing business & personal finances |
-| <img src="https://img.icons8.com/color/48/hospital-room.png" width="24" /> **Hospital Information System (SIMRS)** | Robust system for managing hospital operations |
-| <img src="https://img.icons8.com/color/48/sales-performance.png" width="24" /> **Sales Information System** | All-in-one solution for sales, inventory & reporting |
-| <img src="https://img.icons8.com/color/48/lightning-bolt.png" width="24" /> **Flash Sale Inventory** | High-concurrency reservation system in Go with Gin, pgx & PostgreSQL |
-| <img src="https://img.icons8.com/color/48/video-call.png" width="24" /> **Real-time Chat & Video Call App** | Web & desktop communication tools with WebRTC |
-| <img src="https://img.icons8.com/color/48/language-skill.png" width="24" /> **English Learning App** | Interactive language learning with fun UX |
-| <img src="https://img.icons8.com/color/48/anonymous-mask.png" width="24" /> **Security Penetration Tools** | Python-based ethical hacking & testing tools |
-| <img src="https://img.icons8.com/color/48/hand.png" width="24" /> **Face & Hand Gesture Recognition** | Desktop app for gesture-based UI control |
+| **Financial Management System** | Scalable platform for managing business & personal finances |
+| **Hospital Information System (SIMRS)** | Robust system for managing hospital operations |
+| **Sales Information System** | All-in-one solution for sales, inventory & reporting |
+| **Flash Sale Inventory** | High-concurrency reservation system in Go with Gin, pgx & PostgreSQL |
+| **Real-time Chat & Video Call App** | Web & desktop communication tools with WebRTC |
+| **English Learning App** | Interactive language learning with fun UX |
+| **Security Penetration Tools** | Python-based ethical hacking & testing tools |
+| **Face & Hand Gesture Recognition** | Desktop app for gesture-based UI control |
 
 ---
 
