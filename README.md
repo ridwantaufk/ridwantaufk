@@ -21,7 +21,6 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" width="40" title="GraphQL" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="40" title="PostgreSQL" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="40" title="Python" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/electron/electron-original.svg" width="40" title="Electron" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="40" title="Linux" />
 </div>
 
@@ -36,7 +35,7 @@
 - Building **Next.js** apps with **TypeScript** + GraphQL  
 - Developing **Go** backends with **Gin**, **pgx**, and **PostgreSQL**  
 - Creating **penetration testing** and **vision-based** desktop tools in **Python**  
-- Developing chat, video, and screen-sharing tools with **Electron & WebRTC**  
+- Developing chat, video, and screen-sharing tools with **WebRTC**  
 - Passionate about AI, gesture control, and turning coffee into software
 
 ---
