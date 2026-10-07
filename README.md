@@ -9,12 +9,13 @@
 
 ---
 
-## <img src="./assets/rocket.gif" alt="Rocket" width="35" height="35" /> - Tech Stack
+## Tech Stack
 
 <div align="center" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
   <img src="./assets/physics.gif" width="40" title="React" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg" width="40" title="Next.js" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="40" title="TypeScript" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg" width="40" title="Go" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="40" title="Node.js" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" width="40" title="Express" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" width="40" title="GraphQL" />
@@ -30,22 +31,24 @@
 
 ---
 
-## <img src="./assets/information.gif" alt="Project" width="35" height="35" style="vertical-align:middle;" /> - About Me
+## About Me
 
-- 🔧 Building **Next.js** apps with **TypeScript** + GraphQL  
-- 🧪 Creating **penetration testing** and **vision-based** desktop tools in **Python**  
-- 🔌 Developing chat, video, and screen-sharing tools with **Electron & WebRTC**  
-- 🤖 Passionate about AI, gesture control, and turning coffee into software
+- Building **Next.js** apps with **TypeScript** + GraphQL  
+- Developing **Go** backends with **Gin**, **pgx**, and **PostgreSQL**  
+- Creating **penetration testing** and **vision-based** desktop tools in **Python**  
+- Developing chat, video, and screen-sharing tools with **Electron & WebRTC**  
+- Passionate about AI, gesture control, and turning coffee into software
 
 ---
 
-## <img src="./assets/project.gif" alt="Project" width="35" height="35" style="vertical-align:middle;" /> - Featured Projects
+## Featured Projects
 
 | Project | Description |
 |--------|-------------|
 | <img src="https://icons8.com/icon/2TbVhuRExmQp/financial" width="24" /> **Financial Management System** | Scalable platform for managing business & personal finances |
 | <img src="https://img.icons8.com/color/48/hospital-room.png" width="24" /> **Hospital Information System (SIMRS)** | Robust system for managing hospital operations |
 | <img src="https://img.icons8.com/color/48/sales-performance.png" width="24" /> **Sales Information System** | All-in-one solution for sales, inventory & reporting |
+| <img src="https://img.icons8.com/color/48/lightning-bolt.png" width="24" /> **Flash Sale Inventory** | High-concurrency reservation system in Go with Gin, pgx & PostgreSQL |
 | <img src="https://img.icons8.com/color/48/video-call.png" width="24" /> **Real-time Chat & Video Call App** | Web & desktop communication tools with WebRTC |
 | <img src="https://img.icons8.com/color/48/language-skill.png" width="24" /> **English Learning App** | Interactive language learning with fun UX |
 | <img src="https://img.icons8.com/color/48/anonymous-mask.png" width="24" /> **Security Penetration Tools** | Python-based ethical hacking & testing tools |
@@ -53,7 +56,7 @@
 
 ---
 
-## <img src="./assets/global-connection.gif" alt="global-connection" width="35" height="35" style="vertical-align:middle;" /> - Let's Connect
+## Let's Connect
 
 <p align="center">
   <a href="https://www.linkedin.com/in/ridwan-taufik-b3624325a/"><img src="https://img.icons8.com/ios-filled/50/0A66C2/linkedin.png" width="35" title="LinkedIn"/></a>
